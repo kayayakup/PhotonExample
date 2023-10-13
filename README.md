@@ -1,5 +1,5 @@
 ## This Photon Framework Example made with Unity
 
-![Super Mario Photo 1](https://github.com/kayayakup/SuperMario_Unity/blob/master/Assets/Graphics/Mario%201.PNG?raw=true)
+<img src="https://github.com/kayayakup/PhotonExample/blob/main/PhotonExample/Assets/Ekran%20görüntüsü%202023-10-13%20013035.png" width="1000" height="500" /> <br>
 
-![Super Mario Photo 1](https://github.com/kayayakup/SuperMario_Unity/blob/master/Assets/Graphics/Mario%201.PNG?raw=true)
+<img src="https://github.com/kayayakup/PhotonExample/blob/main/PhotonExample/Assets/Ekran%20görüntüsü%202023-10-13%20012939.png" width="1000" height="500" /> <br>
