@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BallScript : MonoBehaviour
 {
-    Rigidbody RB;
+    Rigidbody BallRb;
     PhotonView PV;
 
     int player1Score = 0, player2Score = 0;
@@ -15,14 +15,14 @@ public class BallScript : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
-        RB = GetComponent<Rigidbody>();
+        BallRb = GetComponent<Rigidbody>();
         PV= GetComponent<PhotonView>();
     }
 
     [PunRPC]
     public void Starter()
     {
-        RB.velocity = new Vector3(5, 5, 0);
+        BallRb.velocity = new Vector3(5, 5, 0);
 
         ShowScore();
     }
@@ -61,10 +61,10 @@ public class BallScript : MonoBehaviour
 
     public void Service()
     {
-        RB.velocity = Vector3.zero;
+        BallRb.velocity = Vector3.zero;
         transform.position = new Vector3(0, 0, -1);
 
-        RB.velocity = new Vector3(5, 5, 0);
+        BallRb.velocity = new Vector3(5, 5, 0);
     }
 
     public void PlayAgain()
