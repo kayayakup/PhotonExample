@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
-    PhotonView PV;
+    PhotonView photonView;
 
     TextMeshProUGUI yazi;
 
@@ -16,9 +16,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         yazi = GameObject.Find("yazi").GetComponent<TextMeshProUGUI>();
-        PV = GetComponent<PhotonView>();
+        photonView = GetComponent<PhotonView>();
 
-        if(PV.IsMine)
+        if(photonView.IsMine)
         {
             if(PhotonNetwork.IsMasterClient)
             {
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     {
         if(PhotonNetwork.PlayerList.Length==2)
         {
-            PV.RPC("DeleteLetter", RpcTarget.All, null);
+            photonView.RPC("DeleteLetter", RpcTarget.All, null);
             GameObject.Find("Ball").GetComponent<PhotonView>().RPC("Starter",RpcTarget.All, null);
             CancelInvoke(nameof(PlayerControl));
         }
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PV.IsMine)
+        if (photonView.IsMine)
         {
             Move();
             if(transform.position.y > 3)
